@@ -14,11 +14,13 @@ begin
                  )
             ;
         ', nbr_of_tables);
+        COMMIT;
     end loop;
 
     for nbr_of_tables in 1..5000 loop
         for nbr_of_lines in 1..100000 loop
-          EXECUTE format('INSERT INTO %s VALUES ($1,$2,$3,$4)'::text ,nbr_of_tables) using nbr_of_lines, 'john', 'doe', '0666666666', 'company';
+          EXECUTE format('INSERT INTO employee_%s VALUES ($1,$2,$3,$4,$5)'::text ,nbr_of_tables) using nbr_of_lines, 'john', 'doe', '0666666666', 'company';
         end loop;
+        COMMIT;
     end loop;
 end; $$
