@@ -15,10 +15,3 @@
  
 > table.sql contains scripts for approach 2
 
-### Execution:
-
-> CREATE DATABASE MY_DATABASE;
-
->
-> 
-> 
